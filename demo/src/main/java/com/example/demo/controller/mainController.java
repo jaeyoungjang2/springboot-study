@@ -16,4 +16,12 @@ public class mainController {
     public String get() {
         return "Hi";
     }
+
+    @RequestMapping("/valueTest")
+    @ResponseBody
+    public String valueTest() {
+        String value = "테스트 String";
+        return value;
+    }
+
 }

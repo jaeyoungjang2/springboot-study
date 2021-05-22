@@ -8,6 +8,7 @@
 </head>
 <body>
     World hello!!!
+    <div id="contents"></div>
     <button onclick="get()">Click Me!</button>
     <script>
         function get(){
@@ -18,6 +19,14 @@
                 }
             })
         }
+    </script>
+    <script>
+        $.ajax({
+            url:"/valueTest",
+            success: (data) => {
+                $('#contents').html(data+" 성공했어요")
+            }
+        })
     </script>
 
 </body>
