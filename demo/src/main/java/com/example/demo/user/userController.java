@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class userController {
-    user userArray = new user(20, "jaeyoung");
+    user[] userArray = { new user(20, "jaeyoung"), new user(30, "jangheon"), new user(40, "chihoon") };
+    // user userArray = new user(20, "jaeyoung");
 
     @RequestMapping("/user")
     public String user(Model model) {

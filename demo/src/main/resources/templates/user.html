@@ -6,6 +6,10 @@
     <title>User page</title>
 </head>
 <body>
-    <h2>제 나이는 <span th:text="${user.age}"></span>살 입니다.</h2>
+    <!-- <h2>제 나이는 <span th:text="${user.age}"></span>살 입니다.</h2> -->
+    <span th:each = "user: ${user}">
+        <h2>제 나이는 <span th:text="${user.age}"></span>이고, 이름은 <span th:text="${user.name}"></span> 입니다.</h2>
+        
+    </span>
 </body>
 </html>
