@@ -18,7 +18,7 @@ public class ThreadLocalLogServiceV2 {
     public void save(String itemId) {
         String message = "ThreadLocalLogServiceV2.save";
 
-        TemplateMethod templateMethod = new TemplateMethod() {
+        TemplateMethod templateMethod = new TemplateMethod(logTrace) {
             @Override
             public void call() {
                 repositoryV0.save(itemId);

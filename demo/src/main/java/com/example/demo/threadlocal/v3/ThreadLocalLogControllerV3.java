@@ -1,8 +1,8 @@
-package com.example.demo.threadlocal.v2;
+package com.example.demo.threadlocal.v3;
 
+import com.example.demo.threadlocal.desingpattern.Concrete;
 import com.example.demo.threadlocal.desingpattern.TemplateMethod;
 import com.example.demo.threadlocal.log.LogTrace;
-import com.example.demo.threadlocal.log.LogTraceStatus;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,24 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/threadlocal")
-public class ThreadLocalLogControllerV2 {
+public class ThreadLocalLogControllerV3 {
 
-    private final ThreadLocalLogServiceV2 serviceV0;
-    private final LogTrace logTrace;
+    private final ThreadLocalLogServiceV3 serviceV0;
+    private final Concrete concrete;
 
     /**
      * 핵심 로직 (itemId 저장)과 부가 로직 (로그 작성)이 같이 있는 상태
      */
-    @GetMapping("/v2/{itemId}")
+    @GetMapping("/v3/{itemId}")
     public void request(@PathVariable String itemId) {
-        String message = "ThreadLocalLogControllerV2.save";
-        TemplateMethod templateMethod = new TemplateMethod(logTrace) {
-            @Override
-            public void call() {
-                serviceV0.save(itemId);
-            }
-        };
-
-        templateMethod.execute(message);
+        String message = "ThreadLocalLogControllerV3.save";
+        concrete.execute(message, () -> serviceV0.save(itemId));
     }
 }

@@ -2,23 +2,19 @@ package com.example.demo.threadlocal.desingpattern;
 
 import com.example.demo.threadlocal.log.LogTrace;
 import com.example.demo.threadlocal.log.LogTraceStatus;
-import com.example.demo.threadlocal.log.TraceInfo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Slf4j
+@Component
 @RequiredArgsConstructor
-public abstract class TemplateMethod {
+public class Concrete {
 
     private final LogTrace logTrace;
-    public void execute(String message) {
+    public void execute(String message, Strategy strategy) {
         LogTraceStatus status = logTrace.begin(message);
-        call();
+        strategy.call();
         logTrace.end(status);
     }
-
-    abstract public void call();
 }
