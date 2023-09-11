@@ -16,7 +16,7 @@ public class ThreadLocalLogRepositoryV1 {
 
     private final LogTrace logTrace;
     public void save(String itemId) {
-        String message = "ThreadLocalLogServiceV1.save";
+        String message = "ThreadLocalLogRepositoryV1.save";
         LogTraceStatus status = logTrace.begin(message);
         this.sleep(1000);
         logTrace.end(status);

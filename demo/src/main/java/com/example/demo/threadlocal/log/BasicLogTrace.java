@@ -10,15 +10,15 @@ import java.util.UUID;
 @Component
 public class BasicLogTrace implements LogTrace {
 
-    private TraceInfo traceInfo;
+    private ThreadLocal<TraceInfo> traceInfo = new ThreadLocal<>();
     @Override
     public LogTraceStatus begin(String message) {
-        if (traceInfo == null) {
+        if (traceInfo.get() == null) {
             String uuId = UUID.randomUUID().toString().substring(0, 8);
-            traceInfo = new TraceInfo(uuId, 0);
+            traceInfo.set(new TraceInfo(uuId, 0));
         }
-        String uuId = traceInfo.getUuId();
-        traceInfo.nextLevel();
+        String uuId = traceInfo.get().getUuId();
+        traceInfo.get().nextLevel();
         long startTime = System.currentTimeMillis();
         log.info("[{}] start {}", uuId, message);
         return new LogTraceStatus(uuId, startTime, message);
@@ -28,9 +28,9 @@ public class BasicLogTrace implements LogTrace {
     public void end(LogTraceStatus status) {
         long endTime = System.currentTimeMillis();
         log.info("[{}] end {} startTime={} endTime={}", status.getUuId(), status.getMessage(), status.getStartTime(), endTime);
-        traceInfo.previouseLevel();
-        if (traceInfo.isLastLevel()) {
-            traceInfo = null;
+        traceInfo.get().previouseLevel();
+        if (traceInfo.get().isLastLevel()) {
+            traceInfo.remove();
         }
     }
 }

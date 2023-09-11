@@ -12,7 +12,7 @@ public class ThreadLocalLogRepositoryV0 {
 
     public void save(String itemId) {
         String uuId = UUID.randomUUID().toString().substring(0, 8);
-        String message = "ThreadLocalLogServiceV0.save";
+        String message = "ThreadLocalLogRepositoryV0.save";
         long startTime = System.currentTimeMillis();
         log.info("[{}] start {}", uuId, message);
         this.sleep(1000);

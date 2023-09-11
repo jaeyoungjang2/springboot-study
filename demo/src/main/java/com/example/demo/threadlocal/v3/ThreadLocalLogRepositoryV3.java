@@ -13,10 +13,9 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class ThreadLocalLogRepositoryV3 {
 
-    private final LogTrace logTrace;
     private final Concrete concrete;
     public void save(String itemId) {
-        String message = "ThreadLocalLogServiceV3.save";
+        String message = "ThreadLocalLogRepositoryV3.save";
         concrete.execute(message, () -> sleep(1000));
     }
 
