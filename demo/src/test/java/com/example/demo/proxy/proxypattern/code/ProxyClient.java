@@ -1,6 +1,4 @@
-package com.example.demo.proxy.code;
-
-import lombok.extern.slf4j.Slf4j;
+package com.example.demo.proxy.proxypattern.code;
 
 public class ProxyClient {
 

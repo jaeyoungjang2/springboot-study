@@ -1,4 +1,4 @@
-package com.example.demo.proxy.code;
+package com.example.demo.proxy.proxypattern.code;
 
 import lombok.extern.slf4j.Slf4j;
 

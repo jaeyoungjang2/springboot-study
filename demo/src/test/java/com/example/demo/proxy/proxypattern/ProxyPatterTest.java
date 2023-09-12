@@ -1,8 +1,8 @@
-package com.example.demo.proxy;
+package com.example.demo.proxy.proxypattern;
 
-import com.example.demo.proxy.code.ProxyClient;
-import com.example.demo.proxy.code.ProxySubject;
-import com.example.demo.proxy.code.RealSubject;
+import com.example.demo.proxy.proxypattern.code.ProxyClient;
+import com.example.demo.proxy.proxypattern.code.ProxySubject;
+import com.example.demo.proxy.proxypattern.code.RealSubject;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

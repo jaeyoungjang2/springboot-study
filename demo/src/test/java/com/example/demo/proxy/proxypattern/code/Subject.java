@@ -1,4 +1,4 @@
-package com.example.demo.proxy.code;
+package com.example.demo.proxy.proxypattern.code;
 
 public interface Subject {
 
