@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class interfaceProxyConfig {
+public class InterfaceProxyConfig {
 
     @Bean
     public ProxyLogControllerV0 proxyLogControllerV0(LogTrace logTrace) {

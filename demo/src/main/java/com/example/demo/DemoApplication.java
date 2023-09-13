@@ -1,6 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.proxyconfig.v0.interfaceProxyConfig;
+import com.example.demo.proxyconfig.v0.ConcreteProxyConfig;
+import com.example.demo.proxyconfig.v0.InterfaceProxyConfig;
 import com.example.demo.threadlocal.log.BasicLogTrace;
 import com.example.demo.threadlocal.log.LogTrace;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
-@Import(interfaceProxyConfig.class)
+@Import({InterfaceProxyConfig.class, ConcreteProxyConfig.class})
 @SpringBootApplication(scanBasePackages = "com.example.demo.proxy")
 public class DemoApplication {
 
