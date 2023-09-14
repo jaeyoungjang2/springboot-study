@@ -1,9 +1,6 @@
 package com.example.demo.proxyconfig.v1_dynamicproxy;
 
 import com.example.demo.proxy.v0.*;
-import com.example.demo.proxyconfig.v0.interface_proxy.LogControllerInterfaceProxy;
-import com.example.demo.proxyconfig.v0.interface_proxy.LogRepositoryInterfaceProxy;
-import com.example.demo.proxyconfig.v0.interface_proxy.LogServiceInterfaceProxy;
 import com.example.demo.proxyconfig.v1_dynamicproxy.code.TimeInvocationHandler;
 import com.example.demo.threadlocal.log.LogTrace;
 import org.springframework.context.annotation.Bean;
