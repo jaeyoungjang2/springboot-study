@@ -19,6 +19,7 @@ import org.springframework.context.annotation.Import;
 //@Import({JdkDynamicProxyConfig.class})
 //@Import(ProxyFactoryConfig.class)
 //@Import({BeanPostProcessorConfig.class})
+//@Import({AppV1Config.class, AppV2Config.class, AutoProxyConfig.class})
 @Import({AppV1Config.class, AppV2Config.class, AutoProxyConfig.class})
 @SpringBootApplication(scanBasePackages = "com.example.demo.proxy")
 public class DemoApplication {
